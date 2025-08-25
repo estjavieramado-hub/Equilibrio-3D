@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Equilibrio 3D</title>
+  <!-- Google Font estilo arcade -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Estilo.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
+</head>
+<body>
+
+  <div id="startPanel" class="panel visible">
+  <h1>Comienzo</h1>
+  <div id="recordTxt" class="subtitle" style="margin-bottom:16px;">Récord: <span id="recordVal">0.00</span> s</div>
+  <button id="startBtn" class="btn primary">¡Jugar!</button>
+  <div class="stitched"></div>
+  </div>
+
+  <div id="timerHud" class="hud" style="display:none;">
+    <div class="chip">
+      Tiempo: <span id="timerVal">0.00</span> s
+    </div>
+  </div>
+
+  <div class="creators-bar">
+  <span>Creado por Lina Vega  &amp; Javier Orlando Amado </span>
+  </div>
+  <script src="codigo.js"></script>
+</body>
+</html>

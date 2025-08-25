@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Equilibrio 3D+ (POO)</title>
+
+    <!-- Google Font estilo arcade -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- Menú principal -->
+    <div id="menu" class="panel visible">
+        <h1>Equilibrio</h1>
+        <p class="subtitle">Mantén la bola sobre el plato el mayor tiempo posible.</p>
+        <div class="btn-row">
+            <button id="playBtn" class="btn primary">Jugar</button>
+            <button id="instructionsBtn" class="btn">Instrucciones</button>
+        </div>
+    </div>
+
+    <!-- Instrucciones -->
+    <div id="instructions" class="panel hidden">
+        <h2>¿Cómo jugar?</h2>
+        <ul class="howto">
+            <li>Usa las teclas <strong>← → ↑ ↓</strong> para empujar la bola (aceleración suave).</li>
+            <li>Evita que la bola caiga. Con el tiempo, el viento y la dificultad aumentan.</li>
+            <li>Puedes alternar entre <strong>cámara fija</strong> y <strong>cámara dinámica</strong>.</li>
+        </ul>
+        <div class="btn-row">
+            <button id="backBtn" class="btn">Volver</button>
+        </div>
+    </div>
+
+    <!-- HUD -->
+    <div id="hud" class="hud hidden">
+        <div class="hud-left">
+            <span id="scoreLabel" class="chip">Puntaje: <span id="score">0</span></span>
+            <span id="difficultyLabel" class="chip">Dificultad: <span id="difficulty">1</span></span>
+            <span id="plateSizeLabel" class="chip">Radio plato: <span id="plateSize">3.0</span></span>
+        </div>
+        <div class="hud-center">
+            <!-- Temporizador circular basado en conic-gradient -->
+            <div class="ring" id="ringTimer" title="Progreso">
+                <div class="ring-inner">
+                    <span id="ringText">0s</span>
+                </div>
+            </div>
+        </div>
+        <div class="hud-right">
+            <button id="toggleAxesBtn" class="btn small">Ejes 3D</button>
+            <button id="cameraBtn" class="btn small">Cámara: Dinámica</button>
+            <button id="restartBtn" class="btn small">Reiniciar</button>
+        </div>
+    </div>
+
+    <!-- Contenedor del render -->
+    <div id="gameContainer" class="game"></div>
+
+    <!-- Barra fija con autores (mejor ubicada) -->
+    <div class="creators fixed-creators" aria-hidden="true">
+        Creado por Lina Sofia Vega &amp; Javier Amado Orozco
+    </div>
+
+    <!-- Overlay de degradado para “cielo” -->
+    <div id="bgOverlay"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
+    <script src="game.js"></script>
+</body>
+
+</html>
